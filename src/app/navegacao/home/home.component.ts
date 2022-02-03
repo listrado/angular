@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styles: []
 })
 export class HomeComponent {
 
@@ -23,6 +23,11 @@ export class HomeComponent {
   getMessages(id: number){
     alert("warning " + this.timeLeft);
     this.timeLeft--;
+    if(this.timeLeft == 0){
+    clearInterval(1);
+    
+
+    } 
   }
 
   pauseTimer() {

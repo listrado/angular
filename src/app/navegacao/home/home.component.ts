@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent {
 
+  public bombinha = '/assets/pictures/bombinha.jpg';
+  public bombinha2 = '/assets/pictures/bombinha2.jpg';
+  public bombinha3 = '/assets/pictures/bombinha3.jpg';
+  public bombinha4 = '/assets/pictures/bombinha4.jpg';
+  public explosao = '/assets/pictures/explosao.png';
   public timeLeft: number = 10;
   public danger: boolean = false;
 
@@ -17,11 +22,11 @@ export class HomeComponent {
 
   startTimer() {
     var id = 0;
-    var intervalID = setInterval(() => this.getMessages(intervalID),5000);
+    var intervalID = setInterval(() => this.getMessages(intervalID),2000);
   }
 
   getMessages(id: number){
-    alert("warning " + this.timeLeft);
+    alert("explosao em " + this.timeLeft);
     this.timeLeft--;
     if(this.timeLeft == 0){
     clearInterval(1);
@@ -32,5 +37,7 @@ export class HomeComponent {
 
   pauseTimer() {
     clearInterval(1);
+    this.danger = false;
+    this.timeLeft = 10;
   }
 }

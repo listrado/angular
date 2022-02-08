@@ -2,19 +2,19 @@
 	"armas": [
 		{
 			"id": 1,
-			"nome": "",
-			"valor": "",
-			"materiaL": "",
+			"nome": "barrett",
+			"valor": "12.999.00",
+			"materiaL": "metal",
 			"foto": "",
-			"distancia: ""
+			"distancia": true
 		},
 		{
 			"id": 2,
-			"nome": "",
-			"valor": "",
-			"materiaL": "",
+			"nome": "katana",
+			"valor": "199.00",
+			"materiaL": "manganese steel",
 			"foto": "",
-			"distancia: ""
+			"distancia": false
 		},
 		{
 			"id": 3,
@@ -22,7 +22,7 @@
 			"valor": "",
 			"materiaL": "",
 			"foto": "",
-			"distancia: ""
+			"distancia": false
 		},
 		{
 			"id": 4,
@@ -30,7 +30,7 @@
 			"valor": "",
 			"materiaL": "",
 			"foto": "",
-			"distancia: ""
+			"distancia": false
 		},
 		{
 			"id": 5,
@@ -38,7 +38,14 @@
 			"valor": "",
 			"materiaL": "",
 			"foto": "",
-			"distancia: ""
+			"distancia": false
 		}
+	],
+	"comments": [
+    	{
+	    	"id": 1,
+	      	"body": "some comment",
+	      	"postId": 1 
+   		}
 	]
 }

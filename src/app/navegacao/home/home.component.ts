@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent {
 
-  public bombinha = '/assets/pictures/bombinha.jpg';
+  public background: string = "background"
+  public bombinha = '/assets/pictures/bombinha.png';
   public bombinha2 = '/assets/pictures/bombinha2.jpg';
   public bombinha3 = '/assets/pictures/bombinha3.jpg';
   public bombinha4 = '/assets/pictures/bombinha4.jpg';
@@ -17,6 +18,7 @@ export class HomeComponent {
 
   warning(){
     this.danger = true;
+    this.background = "background3";
  }
 
 
@@ -39,5 +41,6 @@ export class HomeComponent {
     clearInterval(1);
     this.danger = false;
     this.timeLeft = 10;
+    this.background = "background";
   }
 }

@@ -1,0 +1,44 @@
+{
+	"armas": [
+		{
+			"id": 1,
+			"nome": "",
+			"valor": "",
+			"materiaL": "",
+			"foto": "",
+			"distancia: ""
+		},
+		{
+			"id": 2,
+			"nome": "",
+			"valor": "",
+			"materiaL": "",
+			"foto": "",
+			"distancia: ""
+		},
+		{
+			"id": 3,
+			"nome": "",
+			"valor": "",
+			"materiaL": "",
+			"foto": "",
+			"distancia: ""
+		},
+		{
+			"id": 4,
+			"nome": "",
+			"valor": "",
+			"materiaL": "",
+			"foto": "",
+			"distancia: ""
+		},
+		{
+			"id": 5,
+			"nome": "",
+			"valor": "",
+			"materiaL": "",
+			"foto": "",
+			"distancia: ""
+		}
+	]
+}

@@ -16,3 +16,16 @@
 .mid-container{
 	text-align: center;
 }
+#background {  
+    background-color: #aaa;
+    min-height: 600px;
+}  
+#background2 {  
+    background-image: url("/assets/pictures/bombinha.png");
+    min-height: 600px;
+}
+#background3 {  
+    color: #fff;
+    background-color: #833;
+    min-height: 600px;
+}  

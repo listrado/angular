@@ -1,76 +1,78 @@
-<div class="container main-container mid-container">	
-		<button class="btnj btn-warning" (click)=warning()>botao perigoso</button>
+<div id="{{background}}">	
+	<div class="container main-container mid-container">	
+			<button class="btnj btn-warning" (click)=warning()>botao perigoso</button>
 
-		<br><br><br>
-
-		{{(danger == false)}}
-
-		<br><br><br>
-
-		<div *ngIf="danger;else other_content">
-			<button class="btnj btn-danger" (click)=startTimer()>ATIVAR BOMBA?!</button>
 			<br><br><br>
-		    <h1 [ngClass]="{
-		        'text-danger':timeLeft < 3,
-		        'text-warning':timeLeft < 6,
-		        'text-success':timeLeft < 8,
-		        'text-secondary':timeLeft >= 8
-		      }">BOMBA</h1>
-		    <container-element [ngSwitch]="timeLeft">
-  				
-  				<div *ngSwitchCase=" 10">
-  					<img [src]="bombinha" height="164px" width="253px" alt="">
-  				</div>
 
-  				<div *ngSwitchCase=" 9">
-  					<img [src]="bombinha" height="164px" width="253px" alt="">
-  				</div>
+			{{(danger == false)}}
 
-  				<div *ngSwitchCase=" 8">
-  					<img [src]="bombinha" height="164px" width="253px" alt="">
-  				</div>
-
-  				<div *ngSwitchCase=" 7">
-  					<img [src]="bombinha2" height="164px" width="253px" alt="">
-  				</div>
-
-  				<div *ngSwitchCase=" 6">
-  					<img [src]="bombinha2" height="164px" width="253px" alt="">
-  				</div>
-
-  				<div *ngSwitchCase=" 5">
-  					<img [src]="bombinha3" height="164px" width="253px" alt="">
-  				</div>
-
-  				<div *ngSwitchCase=" 4">
-  					<img [src]="bombinha3" height="164px" width="253px" alt="">
-  				</div>
-
-  				<div *ngSwitchCase=" 3">
-  					<img [src]="bombinha3" height="164px" width="253px" alt="">
-  				</div>
-
-  				<div *ngSwitchCase=" 2">
-  					<img [src]="bombinha4" height="164px" width="253px" alt="">
-  				</div>
-
-  				<div *ngSwitchCase=" 1">
-  					<img [src]="bombinha4" height="164px" width="253px" alt="">
-  				</div>
-
-  				<div *ngSwitchCase=" 0">
-  					<img [src]="explosao" height="164px" width="253px" alt="">
-  				</div>
-
-  				<div *ngSwitchDefault></div>
-
-			</container-element>
 			<br><br><br>
-		    <button class="btnj btn-info" (click)=pauseTimer()>botao seguro</button>
-			
-		</div>
 
-		<ng-template #other_content>
-			<h3>esta tudo bem</h3>
-		</ng-template>
+			<div *ngIf="danger;else other_content">
+				<button class="btnj btn-danger" (click)=startTimer()>ATIVAR BOMBA?!</button>
+				<br><br><br>
+			    <h1 [ngClass]="{
+			        'text-danger':timeLeft < 3,
+			        'text-warning':timeLeft < 6,
+			        'text-success':timeLeft < 8,
+			        'text':timeLeft >= 8
+			      }">BOMBA</h1>
+			    <container-element [ngSwitch]="timeLeft">
+	  				
+	  				<div *ngSwitchCase=" 10">
+	  					<img [src]="bombinha" height="164px" width="253px" alt="">
+	  				</div>
+
+	  				<div *ngSwitchCase=" 9">
+	  					<img [src]="bombinha" height="164px" width="253px" alt="">
+	  				</div>
+
+	  				<div *ngSwitchCase=" 8">
+	  					<img [src]="bombinha" height="164px" width="253px" alt="">
+	  				</div>
+
+	  				<div *ngSwitchCase=" 7">
+	  					<img [src]="bombinha2" height="164px" width="253px" alt="">
+	  				</div>
+
+	  				<div *ngSwitchCase=" 6">
+	  					<img [src]="bombinha2" height="164px" width="253px" alt="">
+	  				</div>
+
+	  				<div *ngSwitchCase=" 5">
+	  					<img [src]="bombinha3" height="164px" width="253px" alt="">
+	  				</div>
+
+	  				<div *ngSwitchCase=" 4">
+	  					<img [src]="bombinha3" height="164px" width="253px" alt="">
+	  				</div>
+
+	  				<div *ngSwitchCase=" 3">
+	  					<img [src]="bombinha3" height="164px" width="253px" alt="">
+	  				</div>
+
+	  				<div *ngSwitchCase=" 2">
+	  					<img [src]="bombinha4" height="164px" width="253px" alt="">
+	  				</div>
+
+	  				<div *ngSwitchCase=" 1">
+	  					<img [src]="bombinha4" height="164px" width="253px" alt="">
+	  				</div>
+
+	  				<div *ngSwitchCase=" 0">
+	  					<img [src]="explosao" height="164px" width="253px" alt="">
+	  				</div>
+
+	  				<div *ngSwitchDefault></div>
+
+				</container-element>
+				<br><br><br>
+			    <button class="btnj btn-info" (click)=pauseTimer()>botao seguro</button>
+				
+			</div>
+
+			<ng-template #other_content>
+				<h3>esta tudo bem</h3>
+			</ng-template>
+	</div>
 </div>

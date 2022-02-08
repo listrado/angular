@@ -11,6 +11,8 @@ import { MenuComponent } from './navegacao/menu/menu.component';
 import { FooterComponent } from './navegacao/footer/footer.component';
 import { ContatoComponent } from './institucional/contato/contato.component';
 import { SobreComponent } from './institucional/sobre/sobre.component';
+import { ArmasService } from './armas/armas.service';
+import { ListaArmasComponent } from './armas/lista-armas/lista-armas.component';
 
 @NgModule({
   declarations: [
@@ -19,14 +21,17 @@ import { SobreComponent } from './institucional/sobre/sobre.component';
     MenuComponent,
     FooterComponent,
     ContatoComponent,
-    SobreComponent
+    SobreComponent,
+    ListaArmasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     [RouterModule.forRoot(rootRouterConfig, { useHash: false})]
   ],
-  providers: [],
+  providers: [
+    ArmasService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

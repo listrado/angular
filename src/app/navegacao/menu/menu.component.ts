@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
 })
 export class MenuComponent{
 
+  public search: string= 'a';
+
+  onSearch(search: string) {
+    this.search = search;
+  }
+
 }

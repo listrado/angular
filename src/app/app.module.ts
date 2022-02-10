@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +28,7 @@ import { ListaArmasComponent } from './armas/lista-armas/lista-armas.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     [RouterModule.forRoot(rootRouterConfig, { useHash: false})]
   ],
   providers: [

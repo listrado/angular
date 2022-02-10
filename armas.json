@@ -4,23 +4,23 @@
 			"id": 1,
 			"nome": "barrett",
 			"valor": "12.999.00",
-			"materiaL": "metal",
-			"foto": "",
+			"material": "metal",
+			"foto": "pictures/barret.jpg",
 			"distancia": true
 		},
 		{
 			"id": 2,
 			"nome": "katana",
 			"valor": "199.00",
-			"materiaL": "manganese steel",
-			"foto": "",
+			"material": "manganese steel",
+			"foto": "pictures/katana.jpg",
 			"distancia": false
 		},
 		{
 			"id": 3,
 			"nome": "",
 			"valor": "",
-			"materiaL": "",
+			"material": "",
 			"foto": "",
 			"distancia": false
 		},
@@ -28,7 +28,7 @@
 			"id": 4,
 			"nome": "",
 			"valor": "",
-			"materiaL": "",
+			"material": "",
 			"foto": "",
 			"distancia": false
 		},
@@ -36,7 +36,7 @@
 			"id": 5,
 			"nome": "",
 			"valor": "",
-			"materiaL": "",
+			"material": "",
 			"foto": "",
 			"distancia": false
 		}

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,7 +15,9 @@ import { SobreComponent } from './institucional/sobre/sobre.component';
 import { ArmasService } from './armas/armas.service';
 import { ListaArmasComponent } from './armas/lista-armas/lista-armas.component';
 import { ArmaComponent } from './armas/arma/arma.component';
-
+import { LoginComponent } from './user/login/login.component';
+import { CreateComponent } from './user/create/create.component';
+import { VideosComponent } from './videos/videos.component';
 
 @NgModule({
   declarations: [
@@ -25,10 +28,14 @@ import { ArmaComponent } from './armas/arma/arma.component';
     ContatoComponent,
     SobreComponent,
     ListaArmasComponent,
-    ArmaComponent
+    ArmaComponent,
+    LoginComponent,
+    CreateComponent,
+    VideosComponent
   ],
   imports: [
     BrowserModule,
+    YouTubePlayerModule,
     AppRoutingModule,
     HttpClientModule,
     [RouterModule.forRoot(rootRouterConfig, { useHash: false})]

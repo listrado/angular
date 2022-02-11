@@ -4,46 +4,27 @@ import { ArmasService } from '../armas.service';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router'
 
 @Component({
-  selector: 'app-lista-armas',
-  templateUrl: './lista-armas.component.html'
+  selector: 'app-arma',
+  templateUrl: './arma.component.html'
 })
-export class ListaArmasComponent implements OnInit {
-  public href: string = "";
+export class ArmaComponent implements OnInit {
+
   constructor(
     private ArmasService: ArmasService,
     private route: ActivatedRoute,
     private router: Router
   ){}
-  public branco = true;
-  public preto = true;
-  public armas!: Armas[];
-  public search!: string;
-  public localizada = false;
 
-  longo(){
-    this.preto = true;
-    this.branco = false;
-  }
-  curto(){
-    this.branco = true;
-    this.preto = false;
-  }
-  reset(){
-    this.branco = true;
-    this.preto = true;
-  }
-  armaLocalizada(){
-    this.localizada = true;
-  }
+  public armas!: Armas[];
+  public id!: string;
+
 
   ngOnInit() {
 
     this.route.paramMap.subscribe(
       params => {
-        this.search = params.getAll('search').toString();
-
+        this.id = params.getAll('id').toString();
       }
-
     );
 
     this.ArmasService.obterArmas().subscribe(

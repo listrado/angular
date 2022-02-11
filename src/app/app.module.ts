@@ -14,6 +14,8 @@ import { ContatoComponent } from './institucional/contato/contato.component';
 import { SobreComponent } from './institucional/sobre/sobre.component';
 import { ArmasService } from './armas/armas.service';
 import { ListaArmasComponent } from './armas/lista-armas/lista-armas.component';
+import { ArmaComponent } from './armas/arma/arma.component';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { ListaArmasComponent } from './armas/lista-armas/lista-armas.component';
     FooterComponent,
     ContatoComponent,
     SobreComponent,
-    ListaArmasComponent
+    ListaArmasComponent,
+    ArmaComponent
   ],
   imports: [
     BrowserModule,

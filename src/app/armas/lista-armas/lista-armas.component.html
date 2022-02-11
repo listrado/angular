@@ -7,75 +7,156 @@
 		<br>
 		{{search}}
 		<br>
-		<div class="row">
-	        <div *ngFor="let arma of armas" class="col-md-4" style="padding-bottom: 30px;">
-		        <div [ngSwitch]="arma.distancia">
-		        	<div *ngSwitchCase="true">
-			            <div *ngIf="preto" class="card h-100">
-			                <a class="text-decoration-none" [routerLink]="['/arma', arma.id]">
-			                    <div style="align-content:center;">
-			                        <img src="/assets/{{ arma.foto }}" height="164px" width="253px" alt="">
-			                    </div>
-			                </a>
-			                <h4 class="card-title">{{ arma.nome | titlecase }}</h4>
-
-			                <div [ngSwitch]="arma.distancia">
-			                    <p *ngSwitchCase="true">arma de fogo!</p>
-			                    <p *ngSwitchCase="false">arma branca!</p>
-			                </div>
-			                <div class="card-body">
-			                    <div><h6 class="card-text">
-			                        feito de: {{ arma.material }}
-			                    </h6></div>
-			                </div>
-
-			                <div class="card-body">
-			                    <div><h4 class="card-text">$
-			                         {{ arma.valor  }}
-			                    </h4></div>
-			                </div>
-
-			                <div class="card-footer">
-			                    <a class="btn btn-primary" [routerLink]="['/carrinho',arma.id]">
-			                        <span class="fa fa-shopping-cart"></span> Comprar
-			                    </a>
-			                </div>
-			            </div>
-		        	</div>
-		        	<div *ngSwitchCase="false">
-			            <div *ngIf="branco" class="card h-100">
-			                <a class="text-decoration-none" [routerLink]="['/arma', arma.id]">
-			                    <div style="align-content:center;">
-			                        <img src="/assets/{{ arma.foto }}" height="164px" width="253px" alt="">
-			                    </div>
-			                </a>
-			                <h4 class="card-title">{{ arma.nome | titlecase }}</h4>
-
-			                <div [ngSwitch]="arma.distancia">
-			                    <p *ngSwitchCase="true">arma de fogo!</p>
-			                    <p *ngSwitchCase="false">arma branca!</p>
-			                </div>
-			                <div class="card-body">
-			                    <div><h6 class="card-text">
-			                        feito de: {{ arma.material }}
-			                    </h6></div>
-			                </div>
-
-			                <div class="card-body">
-			                    <div><h4 class="card-text">
-			                        $ {{ arma.valor }}
-			                    </h4></div>
-			                </div>
-
-			                <div class="card-footer">
-			                    <a class="btn btn-primary" [routerLink]="['/carrinho',arma.id]">
-			                        <span class="fa fa-shopping-cart"></span> Comprar
-			                    </a>
-			                </div>
-			            </div>
-		        	</div>
-		        </div>
-	        </div>
+		<div *ngFor="let arma of armas">
+			<div *ngIf="search == arma.nome">
+				{{ armaLocalizada() }}
+			</div>
 		</div>
+		<div *ngIf="localizada;else other_content">
+			<div class="row">
+				<div *ngFor="let arma of armas" class="col-md-4" style="padding-bottom: 30px;">
+					<div *ngIf="search == arma.nome">
+				        <div [ngSwitch]="arma.distancia">
+				        	<div *ngSwitchCase="true">
+					            <div *ngIf="preto" class="card h-100">
+					                <a class="text-decoration-none" [routerLink]="['/arma', arma.id]">
+					                    <div style="align-content:center;">
+					                        <img src="/assets/{{ arma.foto }}" height="164px" width="253px" alt="">
+					                    </div>
+					                </a>
+					                <h4 class="card-title">{{ arma.nome | titlecase }}</h4>
+
+					                <div [ngSwitch]="arma.distancia">
+					                    <p *ngSwitchCase="true">arma de fogo!</p>
+					                    <p *ngSwitchCase="false">arma branca!</p>
+					                </div>
+					                <div class="card-body">
+					                    <div><h6 class="card-text">
+					                        feito de: {{ arma.material }}
+					                    </h6></div>
+					                </div>
+
+					                <div class="card-body">
+					                    <div><h4 class="card-text">$
+					                         {{ arma.valor  }}
+					                    </h4></div>
+					                </div>
+
+					                <div class="card-footer">
+					                    <a class="btn btn-primary" [routerLink]="['/carrinho',arma.id]">
+					                        <span class="fa fa-shopping-cart"></span> Comprar
+					                    </a>
+					                </div>
+					            </div>
+				        	</div>
+				        	<div *ngSwitchCase="false">
+					            <div *ngIf="branco" class="card h-100">
+					                <a class="text-decoration-none" [routerLink]="['/arma', arma.id]">
+					                    <div style="align-content:center;">
+					                        <img src="/assets/{{ arma.foto }}" height="164px" width="253px" alt="">
+					                    </div>
+					                </a>
+					                <h4 class="card-title">{{ arma.nome | titlecase }}</h4>
+
+					                <div [ngSwitch]="arma.distancia">
+					                    <p *ngSwitchCase="true">arma de fogo!</p>
+					                    <p *ngSwitchCase="false">arma branca!</p>
+					                </div>
+					                <div class="card-body">
+					                    <div><h6 class="card-text">
+					                        feito de: {{ arma.material }}
+					                    </h6></div>
+					                </div>
+
+					                <div class="card-body">
+					                    <div><h4 class="card-text">
+					                        $ {{ arma.valor }}
+					                    </h4></div>
+					                </div>
+
+					                <div class="card-footer">
+					                    <a class="btn btn-primary" [routerLink]="['/carrinho',arma.id]">
+					                        <span class="fa fa-shopping-cart"></span> Comprar
+					                    </a>
+					                </div>
+					            </div>
+				        	</div>
+				        </div>
+				    </div>
+		        </div>
+		    </div>
+		</div>
+		<ng-template #other_content>
+			<div class="row">
+		        <div *ngFor="let arma of armas" class="col-md-4" style="padding-bottom: 30px;">
+			        <div [ngSwitch]="arma.distancia">
+			        	<div *ngSwitchCase="true">
+				            <div *ngIf="preto" class="card h-100">
+				                <a class="text-decoration-none" [routerLink]="['/arma', arma.id]">
+				                    <div style="align-content:center;">
+				                        <img src="/assets/{{ arma.foto }}" height="164px" width="253px" alt="">
+				                    </div>
+				                </a>
+				                <h4 class="card-title">{{ arma.nome | titlecase }}</h4>
+
+				                <div [ngSwitch]="arma.distancia">
+				                    <p *ngSwitchCase="true">arma de fogo!</p>
+				                    <p *ngSwitchCase="false">arma branca!</p>
+				                </div>
+				                <div class="card-body">
+				                    <div><h6 class="card-text">
+				                        feito de: {{ arma.material }}
+				                    </h6></div>
+				                </div>
+
+				                <div class="card-body">
+				                    <div><h4 class="card-text">$
+				                         {{ arma.valor  }}
+				                    </h4></div>
+				                </div>
+
+				                <div class="card-footer">
+				                    <a class="btn btn-primary" [routerLink]="['/carrinho',arma.id]">
+				                        <span class="fa fa-shopping-cart"></span> Comprar
+				                    </a>
+				                </div>
+				            </div>
+			        	</div>
+			        	<div *ngSwitchCase="false">
+				            <div *ngIf="branco" class="card h-100">
+				                <a class="text-decoration-none" [routerLink]="['/arma', arma.id]">
+				                    <div style="align-content:center;">
+				                        <img src="/assets/{{ arma.foto }}" height="164px" width="253px" alt="">
+				                    </div>
+				                </a>
+				                <h4 class="card-title">{{ arma.nome | titlecase }}</h4>
+
+				                <div [ngSwitch]="arma.distancia">
+				                    <p *ngSwitchCase="true">arma de fogo!</p>
+				                    <p *ngSwitchCase="false">arma branca!</p>
+				                </div>
+				                <div class="card-body">
+				                    <div><h6 class="card-text">
+				                        feito de: {{ arma.material }}
+				                    </h6></div>
+				                </div>
+
+				                <div class="card-body">
+				                    <div><h4 class="card-text">
+				                        $ {{ arma.valor }}
+				                    </h4></div>
+				                </div>
+
+				                <div class="card-footer">
+				                    <a class="btn btn-primary" [routerLink]="['/carrinho',arma.id]">
+				                        <span class="fa fa-shopping-cart"></span> Comprar
+				                    </a>
+				                </div>
+				            </div>
+			        	</div>
+			        </div>
+		        </div>
+		    </div>
+		</ng-template>
 	</div>
 </div>
